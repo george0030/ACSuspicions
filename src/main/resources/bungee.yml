@@ -1,0 +1,4 @@
+name: ACSuspicions
+version: ${project.version}
+main: net.kleptic.acsuspicions.ACSuspicions
+description: Keep track of suspected cheaters and notify staff

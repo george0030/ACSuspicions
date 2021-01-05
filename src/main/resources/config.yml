@@ -1,0 +1,28 @@
+#Database information:
+mysql:
+  host: localhost
+  port: 3306
+  user: root
+  password: root
+  database: acsus
+
+
+
+#Actions:
+#Placeholders:
+# {PLAYER} - Player's name
+# {SERVER} - Server where the suspected hacking takes place
+# {HACK} - Type of suspected hack involved.
+# On the first time a player is suspected of hacking, commands at subsection 0 are executed. On the second time, 1 is executed and so on.
+# Subsection n can be added, which is executed if no other matching indices are found.
+# Placeholder {N} signifies the number of times the player has been suspected of hacking previously.
+# Likewise, {N+1} signifies the number of times the player has been suspected of hacking, including right now.
+actions:
+  0:
+    - "staffsay {PLAYER} hacking in {SERVER} with {HACK}"
+  1:
+    - "staffsay {PLAYER} hacking in {SERVER} with {HACK} for the second time"
+  2:
+    - "staffsay {PLAYER} hacking in {SERVER} with {HACK} for the first time"
+  n:
+    - "staffsay {PLAYER} hacking in {SERVER} with {HACK} for the {N+1}th time."
